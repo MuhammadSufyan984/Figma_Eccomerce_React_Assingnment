@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { productsData } from '../../data/productsData';
 import './ProductDetail.css';
-import ReviewsSection from '../../components/reviewsSection/reviewsSection';
+import ReviewsSection from '../../components/reviewsSection/ReviewsSection';
 import Recommendations from '../../components/recommendations/Recommendations';
 
 export default function ProductDetail() {
