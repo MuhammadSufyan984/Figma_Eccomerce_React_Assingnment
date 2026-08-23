@@ -1,0 +1,206 @@
+/* Core Structural Layout Base */
+.navbar-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  /* border-bottom: 1px solid #f0f0f0; */
+  padding: 14px 16px;
+  box-sizing: border-box;
+  font-family: Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.navbar-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Group Elements */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-logo {
+  font-size: 26px;
+  font-weight: 850;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+/* Button & Vector Elements Configuration */
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #000000;
+}
+
+.menu-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Centralized Field Form Elements */
+.navbar-search {
+  flex: 1;
+  max-width: 530px;
+  background-color: #f0f0f0;
+  border-radius: 62px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 16px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #666666;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+  color: #000000;
+}
+
+.search-input::placeholder {
+  color: #999999;
+}
+
+/* Actions Utility Elements Grid */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.action-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* --- MOBILE SPECIFIC VIEWPORT STYLES (Up to tablet) --- */
+@media (max-width: 991px) {
+  .navbar-search {
+    display: none; /* Hide wide search bar to match mockup image */
+  }
+
+  .mobile-search-btn {
+    display: flex; /* Bring out separate search glass icon */
+  }
+
+  /* Overlay Navigation Links Drawer */
+  .navbar-links-container {
+    position: absolute;
+    top: 100px;
+    left: -100%;
+    width: 100%;
+    max-width: 280px;
+    height: calc(100vh - 100px);
+    background-color: #ffffff;
+    box-shadow: 6px 0 15px rgba(0, 0, 0, 0.05);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+  .navbar-links-container.active {
+    left: 0;
+  }
+
+  .navbar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dropdown-chevron {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* --- DESKTOP SPECIFIC VIEWPORT STYLES (Laptops & Displays) --- */
+@media (min-width: 992px) {
+  .mobile-menu-btn, 
+  .mobile-search-btn {
+    display: none; /* Hide mobile toggles on widescreen layouts */
+  }
+
+  .navbar-wrapper {
+    padding: 20px 24px;
+  }
+
+  .navbar-logo {
+    font-size: 32px;
+  }
+
+  .navbar-links-container {
+    display: block;
+  }
+
+  .navbar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: #666666;
+  }
+
+  .dropdown-chevron {
+    width: 12px;
+    height: 12px;
+  }
+}

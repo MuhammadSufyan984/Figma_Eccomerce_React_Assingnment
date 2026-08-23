@@ -1,0 +1,29 @@
+/* Reusable Shared Button Styles */
+.custom-shared-btn {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 62px;
+  padding: 16px 54px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%; /* Spans full width on mobile screens */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-family: Arial, sans-serif;
+}
+
+.custom-shared-btn:hover {
+  background-color: #333333;
+}
+
+.custom-shared-btn:active {
+  transform: scale(0.98); /* Tactile click feedback feel */
+}
+
+/* Widescreen Laptop/Desktop Adjustments */
+@media (min-width: 992px) {
+  .custom-shared-btn {
+    width: auto; /* Shrinks back to fit text on larger displays */
+  }
+}

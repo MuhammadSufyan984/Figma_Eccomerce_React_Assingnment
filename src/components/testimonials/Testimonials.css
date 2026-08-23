@@ -1,0 +1,209 @@
+/* src/components/Testimonials/Testimonials.css */
+@import url('https://googleapis.com');
+
+/* Core Structural Area Canvas Blocks */
+.testimonials-section-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 50px 0; /* Changed padding to 0 on sides to allow full-bleed scroll tracks */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents leaking cards from creating a horizontal browser scrollbar */
+  position: relative; /* Hard anchors the absolute fade masks to the browser window edges */
+}
+
+.testimonials-inner-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px; /* Keeps your text content safe inside alignment lines */
+  box-sizing: border-box;
+}
+
+/* Header Elements Positioning Row */
+.testimonials-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.testimonials-main-heading {
+  font-family: 'Integral CF', Arial, -apple-system, sans-serif;
+  font-size: clamp(26px, 5vw, 48px);
+  font-weight: 900;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* Navigation Arrow Keys Layout */
+.slider-control-arrows-box {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-btn {
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px;
+  user-select: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.arrow-btn:active {
+  transform: scale(0.85);
+}
+
+.arrow-disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   THE EXACT GRADIENT FADE MASK ENGINE (Moved to screen boundaries)
+   ========================================================================== */
+.fade-mask-left,
+.fade-mask-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5%; /* Subtle blend mask width on mobile screen ratios */
+  z-index: 10;
+  pointer-events: none; /* Allows clicks to pass straight through the masks onto real cards */
+}
+
+.fade-mask-left {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 15%, rgba(255, 255, 255, 0) 100%);
+}
+
+.fade-mask-right {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 15%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* CAROUSEL MASK PORTAL VIEW WINDOWS */
+.testimonials-carousel-view-portal {
+  width: 100%;
+  overflow: visible; /* Crucial: changes from hidden to visible so side cards bleed out past borders */
+}
+
+.testimonials-flex-scroll-track {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* INDIVIDUAL REUSABLE REVIEW CARD MOCKUPS COMPONENTS */
+.testimonial-card-item {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  flex: 0 0 100%; /* Default mobile: card takes up full track screen */
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Star Row Alignments layout */
+.testimonial-stars-row {
+  display: flex;
+  gap: 2px;
+}
+
+.t-star {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.t-full { color: #ffc633; }
+.t-empty { color: #e0e0e0; }
+
+/* Review Author Matrix Rows */
+.testimonial-author-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonial-author-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+/* Verified account circular stamp checkmark icons elements */
+.verified-checkmark-badge {
+  background-color: #01ab31; 
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-feedback-paragraph {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   WIDESCREEN DESKTOP & LAPTOP RESPONSE BREAKPOINT ALIGNMENTS SYSTEM
+   ========================================================================== */
+@media (min-width: 992px) {
+  .testimonials-section-wrapper {
+    padding: 70px 0;
+  }
+
+  .testimonials-inner-container {
+    padding: 0 24px;
+  }
+
+  .testimonials-header-row {
+    margin-bottom: 40px;
+  }
+
+  /* 
+     Calculates perfect dynamic width positioning to anchor fade overlays 
+     completely outside the central 1240px bounds grid
+  */
+  .fade-mask-left,
+  .fade-mask-right {
+    width: calc((100vw - 1200px) / 2 + 40px);
+    min-width: 80px;
+  }
+
+  .testimonials-flex-scroll-track {
+    gap: 20px;
+  }
+
+  .testimonial-card-item {
+    /* Renders exactly 3 cards side-by-side inside the 1240px container box bounds */
+    flex: 0 0 calc(33.333% - 13.33px);
+    padding: 32px 28px;
+    height: 240px; 
+  }
+
+  .testimonial-feedback-paragraph {
+    font-size: 15px;
+  }
+}

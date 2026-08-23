@@ -1,0 +1,255 @@
+/* src/components/newArrivals/ProductCard.css */
+
+/* ==========================================================================
+   1. GLOBAL WEB FONT LOADING INJECTION (Correct Google Font Path)
+   ========================================================================== */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   2. UNIQUE PRODUCT CARD LINK WRAPPER (ZERO INTERFERENCE DESIGN)
+   ========================================================================== */
+.product-card-link-wrapper,
+.product-card-link-wrapper:link,
+.product-card-link-wrapper:visited,
+.product-card-link-wrapper:hover,
+.product-card-link-wrapper:active {
+  text-decoration: none !important; /* Strips browser links underline marks */
+  color: inherit !important;         /* Forces title texts to stay true black */
+  outline: none;
+  
+  /* 
+    THE CRITICAL HOMEPAGE FIX: display: contents makes the link wrapper invisible 
+    to your grids, letting the product-card-container render beautifully!
+  */
+  display: contents !important; 
+}
+
+/* Explicit text decoration locks */
+.product-title-text,
+.rating-numeric-value,
+.product-current-price,
+.product-original-price,
+.product-discount-badge,
+.star-icon {
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   3. PRODUCT CARD STYLING REGISTRY
+   ========================================================================== */
+.product-card-container {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 8px;
+  box-sizing: border-box;
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, box-shadow;
+  
+  /* FIXED: Prevents grid track bursting under 390px */
+  min-width: 0 !important; 
+}
+
+.product-img-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #f0eeed;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-main-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.product-info-block {
+  padding: 12px 4px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+  min-width: 0 !important; /* Forces sub-flex items to shrink perfectly */
+}
+
+.product-title-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  width: 100%;
+}
+
+.product-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.stars-wrapper {
+  display: flex;
+  gap: 2px;
+}
+
+.star-icon {
+  font-size: 20px; 
+  line-height: 1;
+}
+
+.full-star { color: #ffc633; }
+.empty-star { color: #e0e0e0; }
+
+.half-star-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.half-star-bg {
+  color: #e0e0e0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.half-star-fg {
+  color: #ffc633;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.rating-numeric-value {
+  font-size: 13px;
+  color: #000000;
+  font-weight: 500;
+}
+
+.max-rating-scale { color: #888888; }
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+  flex-wrap: wrap; /* Allows pricing badges to drop on extremely narrow viewports */
+}
+
+.product-current-price {
+  font-size: 20px;
+  font-weight: 800; 
+  color: #000000;
+}
+
+.product-original-price {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  /* FIXED: Striking target line inject kar di taaki line cut ho sake */
+  text-decoration: line-through !important; 
+  color: rgba(0, 0, 0, 0.4); /* Thoda soft grey color matching design specs */
+  margin-left: 4px;
+}
+
+/* Is ke sath ensure karein ki discount badge ka look bhi clean ho */
+.product-discount-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: rgba(255, 51, 51, 0.1); /* Soft red background opacity */
+  color: #ff3333;
+  padding: 4px 12px;
+  border-radius: 62px;
+  margin-left: 8px;
+}
+
+
+/* ==========================================================================
+   4. PURE HOVER MICROMOTIONS INTERACTIVE ENGINE
+   ========================================================================== */
+@media (hover: hover) {
+  .product-card-link-wrapper:hover .product-card-container {
+    transform: translateY(-8px);
+    background-color: #ffffff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .product-card-link-wrapper:hover .product-main-asset {
+    transform: scale(1.04);
+  }
+}
+
+/* ==========================================================================
+   5. MOBILE VIEW RESPONSIVE CALIBRATIONS (UNDER 500PX VIEWPORTS)
+   ========================================================================== */
+@media (max-width: 500px) {
+  .product-card-container {
+    padding: 4px !important;
+  }
+  
+  .product-img-frame {
+    border-radius: 14px !important;
+  }
+
+  .product-title-text {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important; /* Gracefully truncates long text using dots (...) */
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .product-current-price,
+  .product-original-price {
+    font-size: 15px !important;
+  }
+  
+  .star-icon {
+    font-size: 13px !important;
+  }
+}
+
+/* ==========================================================================
+   6. ULTRA-NARROW DEVICE OPTIMIZATION (SOLVES THE 390PX LEAK CRASH)
+   ========================================================================== */
+@media (max-width: 395px) {
+  .product-info-block {
+    gap: 3px !important; /* Compresses internal vertical padding channels */
+  }
+
+  .product-current-price {
+    font-size: 14px !important;
+  }
+
+  .product-original-price {
+    font-size: 14px !important;
+  }
+
+  .product-discount-badge {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+  }
+
+  .rating-numeric-value {
+    font-size: 11px !important;
+  }
+}

@@ -1,0 +1,103 @@
+/* Component Structural Parent Boundary Workspace */
+.top-selling-section-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 50px 16px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.08); 
+}
+
+.top-selling-inner-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Header Accent Title Rules */
+.top-selling-main-heading {
+  font-family: 'Integral CF', Arial, -apple-system, sans-serif;
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 900;
+  text-align: center;
+  color: #000000;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.02em;
+}
+
+/* Pure CSS Grid Engine mapping responsive card listings */
+.top-selling-products-grid {
+  display: grid;
+  /* Default Mobile: 2 items side-by-side */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 16px;
+  width: 100%;
+}
+
+/* Action Trigger View All Button Placement Box */
+.ts-view-all-btn-holder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 36px;
+}
+
+.ts-view-all-action-trigger {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+  border-radius: 62px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%; 
+  max-width: 218px; 
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.ts-view-all-action-trigger:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* ==========================================================================
+   DYNAMIC COMPONENT SCREEN ADJUSTMENTS
+   ========================================================================== */
+
+/* For intermediate small screens */
+@media (min-width: 576px) {
+  .top-selling-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 768px) {
+  .top-selling-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Full Laptop Screen Viewports */
+@media (min-width: 1025px) {
+  .top-selling-section-wrapper {
+    padding: 70px 24px;
+  }
+
+  .top-selling-main-heading {
+    margin-bottom: 55px; 
+  }
+
+  .top-selling-products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .ts-view-all-btn-holder {
+    margin-top: 48px;
+  }
+}

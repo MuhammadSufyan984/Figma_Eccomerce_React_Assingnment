@@ -1,0 +1,130 @@
+/* src/components/BrowseByStyle/BrowseByStyle.css */
+@import url('https://googleapis.com');
+
+/* Main Wrapper Boundary Backing Grid Container */
+.browse-style-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+/* Big Rounded Container Backdrop Wash (Matching Figma) */
+.browse-style-card-inner-box {
+  max-width: 1240px;
+  margin: 0 auto;
+  background-color: #f0eeed;
+  border-radius: 40px;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+/* Component Section Accent Title Header */
+.browse-style-main-heading {
+  font-family: 'Integral CF', Arial, -apple-system, sans-serif;
+  font-size: clamp(26px, 5vw, 48px);
+  font-weight: 900;
+  text-align: center;
+  color: #000000;
+  margin: 0 0 28px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* Fluid Layout Grid Engine Base (Mobile Portrait View) */
+.browse-style-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stacks cards smoothly in 1 single column on tiny screens */
+  gap: 16px;
+  width: 100%;
+}
+
+/* Unified Structural Base Code for Category Card Blocks */
+.style-base-card-item {
+  position: relative;
+  width: 100%;
+  height: 190px; /* Locked elevation height on mobile */
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Scalable Category Background Images Constraints Rules */
+.style-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right top; /* Keeps critical visual subjects centered on mobile crop viewports */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Bold Category Heading Position Overlays Labels */
+.style-card-title-text {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  z-index: 2;
+}
+
+/* --- INTEGRATED TRANSITIONS HOVER MOTIONS ENGINE --- */
+@media (hover: hover) {
+  .style-base-card-item:hover .style-card-image {
+    transform: scale(1.03); /* Subtle fluid camera zoom depth expansion effect */
+  }
+}
+
+/* ==========================================================================
+   WIDESCREEN RESPONSIVE DESIGN MEDIA BREAKPOINT
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .browse-style-card-inner-box {
+    padding: 70px 64px; /* Increases inner padding for desktop look */
+  }
+
+  .browse-style-main-heading {
+    margin-bottom: 64px;
+  }
+
+  .browse-style-categories-grid {
+    /* Snaps layout directly to standard structural grids matrix grids rows */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+
+  .style-base-card-item {
+    height: 289px; /* Scales card height box structures nicely on laptop screens */
+  }
+
+  /* 
+     Asymmetrical Grid Spanning Allocations Logic:
+     Locks dynamic columns ratio parameters across standard display grids matrix columns rows 
+  */
+  
+  /* Row 1, Card 1 (Casual): Narrow (Takes up 2 spans of 6) */
+  .style-card-short:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  /* Row 1, Card 2 (Formal): Wide (Takes up 4 spans of 6) */
+  .style-card-long:nth-child(2) {
+    grid-column: span 4;
+  }
+
+  /* Row 2, Card 3 (Party): Wide (Takes up 4 spans of 6) */
+  .style-card-long:nth-child(3) {
+    grid-column: span 4;
+  }
+
+  /* Row 2, Card 4 (Gym): Narrow (Takes up 2 spans of 6) */
+  .style-card-short:nth-child(4) {
+    grid-column: span 2;
+  }
+}

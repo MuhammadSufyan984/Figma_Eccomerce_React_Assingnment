@@ -1,0 +1,30 @@
+/* Black Background Container Wrapper */
+.brands-banner-wrapper {
+  width: 100%;
+  background-color: #000000;
+  padding: 36px 16px;
+  box-sizing: border-box;
+}
+
+/* Flex Container Grid Engine */
+.brands-banner-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrap grid positioning */
+  justify-content: center; /* Centers elements and rows perfectly */
+  align-items: center;
+  gap: 28px 16px; /* Balance spacing between mobile rows */
+}
+
+/* Widescreen Desktop Reset back to a single flat line */
+@media (min-width: 992px) {
+  .brands-banner-wrapper {
+    padding: 40px 24px;
+  }
+  
+  .brands-banner-container {
+    justify-content: space-between; /* Spreads logos out in 1 row on desktop */
+    gap: 0;
+  }
+}

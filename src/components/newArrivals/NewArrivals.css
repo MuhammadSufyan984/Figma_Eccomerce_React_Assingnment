@@ -1,0 +1,103 @@
+/* Core Structural Layout Container Workspace */
+.new-arrivals-section-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 50px 16px;
+  box-sizing: border-box;
+}
+
+/* Inner Maximum Bounds Alignment Ring */
+.new-arrivals-inner-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Title Typography */
+.new-arrivals-main-heading {
+  font-family: 'Integral CF', Arial, -apple-system, sans-serif;
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 900;
+  text-align: center;
+  color: #000000;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.02em;
+}
+
+/* Fluid Responsive Grid Engine (Adaptive Breaking Point Engine) */
+.new-arrivals-products-grid {
+  display: grid;
+  /* Default: exactly 2 product cards side-by-side on small mobile screens */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 16px; 
+  width: 100%;
+}
+
+/* Action Trigger View All Button Box placement wrapper */
+.view-all-btn-holder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 36px;
+}
+
+.view-all-action-trigger {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+  border-radius: 62px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%; 
+  max-width: 218px; 
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.view-all-action-trigger:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* ==========================================================================
+   DYNAMIC COMPONENT SCREEN ADJUSTMENTS
+   ========================================================================== */
+
+/* For smaller tablets or screens narrower than 768px */
+@media (min-width: 576px) {
+  .new-arrivals-products-grid {
+    grid-template-columns: repeat(2, 1fr); /* Maintains stable 2-column configuration to stop canvas spilling */
+  }
+}
+
+/* Medium Devices (Tablets, Medium Screen Sizes) */
+@media (min-width: 768px) {
+  .new-arrivals-products-grid {
+    grid-template-columns: repeat(3, 1fr); /* Expands smoothly to 3 cards when actual space is available */
+    gap: 24px;
+  }
+}
+
+/* Large Widescreen Devices (Full Laptop and Monitors) */
+@media (min-width: 1025px) {
+  .new-arrivals-section-wrapper {
+    padding: 70px 24px;
+  }
+
+  .new-arrivals-main-heading {
+    margin-bottom: 55px; 
+  }
+
+  .new-arrivals-products-grid {
+    grid-template-columns: repeat(4, 1fr); /* Safely renders all 4 cards in a row without overflow */
+    gap: 20px;
+  }
+
+  .view-all-btn-holder {
+    margin-top: 48px;
+  }
+}

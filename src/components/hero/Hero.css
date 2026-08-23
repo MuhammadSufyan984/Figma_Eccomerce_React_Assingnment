@@ -1,0 +1,128 @@
+/* Main Page Area Layout Wrapper */
+.hero-main-wrapper {
+  width: 100%;
+  background-color: #f2f0f1;
+  padding: 40px 16px 0 16px; /* Hard locked bottom padding to 0 */
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: Arial, -apple-system, sans-serif;
+}
+
+.hero-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Left Grid Content Elements */
+.hero-left-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-heading {
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: #000000;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.hero-paragraph {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0 0 24px 0;
+  max-width: 540px;
+}
+
+.hero-btn-container {
+  margin-bottom: 40px;
+}
+
+/* Statistics Mapping Layout Row Grid */
+.hero-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Right Column Main Visual Display Assets */
+.hero-right-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Keeps container contents pinned to bottom line */
+}
+
+/* The Secret Fix: Forces container to never create extra space below image */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;         /* Prevents container from growing larger than image */
+  align-items: flex-end; /* Forces image flush to the very bottom */
+}
+
+/* Forces image to sit perfectly flush without hidden line-height gaps */
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  display: block;        /* Changes from inline to block to eliminate bottom spacing gaps */
+  margin-bottom: 0;      /* Guarantees no unexpected margin gap */
+}
+
+/* Graphic Decorative Overlay Sparkles */
+.sparkle {
+  position: absolute;
+  color: #000000;
+  user-select: none;
+}
+
+.sparkle-large {
+  font-size: 56px;
+  top: 10%;
+  right: 5%;
+}
+
+.sparkle-small {
+  font-size: 36px;
+  top: 45%;
+  left: 5%;
+}
+
+/* --- WIDESCREEN RESPONSIVE MEDIA BREAKPOINT (Laptops & Desktops) --- */
+@media (min-width: 992px) {
+  .hero-main-wrapper {
+    padding: 0 24px;
+  }
+
+  .hero-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch; /* Stretches sections to share equal height boundaries */
+    gap: 40px;
+  }
+
+  .hero-left-section {
+    width: 55%;
+    padding: 80px 0;
+  }
+
+  .hero-right-section {
+    width: 45%;
+    display: flex;
+    align-items: flex-end; /* Hard lock for desktop viewport */
+  }
+
+  .hero-image-container {
+    max-width: 100%; /* Allows image container to dynamically match the flex container */
+  }
+}

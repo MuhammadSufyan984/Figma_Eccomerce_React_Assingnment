@@ -1,0 +1,31 @@
+/* Reusable Base Logo Item Frame */
+.brand-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Forces 3 items on row 1, remaining wrap down dynamically */
+  flex: 0 1 calc(33.33% - 16px); 
+  min-width: 80px;
+  box-sizing: border-box;
+}
+
+/* Vector Graphic Constraint Scale System */
+.brand-logo-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 22px; /* Keeps various brand logo dimensions uniform on mobile */
+  object-fit: contain;
+  /* Converts any dark source files to crisp solid white */
+  filter: brightness(0) invert(1); 
+}
+
+/* Desktop Dimension Scale Restoration */
+@media (min-width: 992px) {
+  .brand-logo-item {
+    flex: 0 0 auto; /* Removes the 33% grid constraint on widescreen viewports */
+  }
+
+  .brand-logo-img {
+    max-height: 32px; /* Restores the bold original scale for desktop */
+  }
+}

@@ -1,0 +1,56 @@
+.recommendations-outer-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 64px 0 80px 0;
+  box-sizing: border-box;
+}
+
+.recommendations-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Heading style matching Integral CF font weight specs */
+.recommendations-heading {
+  font-family: 'Integral CF', Arial, sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 40px 0;
+  letter-spacing: -0.5px;
+}
+
+/* 4-Column Grid alignment tracking your desktop viewport */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Responsive screen layout query scales matrix layer rules */
+@media (max-width: 1024px) {
+  .recommendations-grid {
+    grid-template-columns: repeat(3, 1fr); /* Tablet view adjustment */
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recommendations-outer-wrapper {
+    padding: 40px 0 60px 0;
+  }
+  
+  .recommendations-heading {
+    margin-bottom: 24px;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: repeat(2, 1fr); /* Mobile layout matrix stack view */
+    gap: 12px;
+  }
+}

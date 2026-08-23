@@ -1,0 +1,248 @@
+/* Core framework shell constraints bounds margins layers scales */
+.shop-co-cart-page-framework-shell {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 24px 16px 80px 16px;
+  box-sizing: border-box;
+}
+
+.cart-page-central-bounds-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Breadcrumbs tracking text specifications profiles */
+.cart-page-breadcrumbs-trail-row {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.bc-stale-node-label { color: rgba(0, 0, 0, 0.6); }
+.bc-arrow-split-node { color: rgba(0, 0, 0, 0.25); user-select: none; }
+.bc-active-node-label { color: #000000; font-weight: 500; }
+
+.cart-page-main-hero-bold-heading-title {
+  font-family: 'Integral CF', Arial, sans-serif;
+  font-size: clamp(32px, 5vw, 40px);
+  font-weight: 900;
+  color: #000000;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Dual Column Split Layout configurations from figma viewport metrics templates */
+.cart-page-split-dual-viewports-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 505px; /* Perfect proportional split balancing weight sheets */
+  gap: 24px;
+  width: 100%;
+  align-items: start;
+}
+
+/* LEFT SIDE LIST CONTAINER CARD FRAMEWORK ACCENTS SHEET CARDS */
+.cart-items-scroller-list-container-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-cart-item-row-card-box {
+  display: grid;
+  grid-template-columns: 124px 1fr;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.single-cart-item-row-card-box:first-child { padding-top: 0; }
+.single-cart-item-row-card-box:last-child { padding-bottom: 0; border-bottom: none; }
+
+.item-asset-canvas-thumbnail-frame {
+  width: 124px;
+  height: 124px;
+  background-color: #f0eeed;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-actual-image-node-asset { width: 100%; height: 100%; object-fit: cover; }
+
+.item-meta-details-text-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.item-header-meta-row-alignment {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.item-brand-display-name-label { font-size: 20px; font-weight: 700; color: #000000; margin: 0; }
+
+.item-trash-bin-destructive-action-trigger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s ease;
+}
+
+.item-trash-bin-destructive-action-trigger-btn:hover { transform: scale(1.1); }
+
+.item-attribute-secondary-copy { font-size: 14px; color: #000000; margin: 0 0 4px 0; font-weight: 400; }
+.item-attribute-secondary-copy .attr-val-node { color: rgba(0, 0, 0, 0.6); }
+
+.item-pricing-and-counter-row-flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Docks pricing content straight to baseline */
+}
+
+.item-price-numeric-weight-label { font-size: 24px; font-weight: 800; color: #000000; }
+
+/* Mathematical numeric dynamic counters styling frameworks */
+.item-math-counter-capsule-stepper-box {
+  background-color: #f0eeed;
+  border-radius: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 105px;
+  height: 36px;
+  padding: 0 12px;
+}
+
+.counter-math-action-puck { background-color: transparent; border: none; font-size: 18px; cursor: pointer; color: #000000; }
+.counter-current-numeric-display { font-size: 14px; font-weight: 600; color: #000000; }
+
+/* RIGHT ORDER SUMMARY STYLING ACCENTS BALANCES BOARDS CARDS PANELS */
+.cart-order-summary-calculator-card-panel {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.summary-title-text-header { font-size: 24px; font-weight: 700; color: #000000; margin: 0 0 24px 0; }
+.summary-computational-rows-stack-list { display: flex; flex-direction: column; gap: 20px; }
+
+.calc-row-flexbox-item { display: flex; justify-content: space-between; align-items: center; font-size: 16px; }
+.label-stale-grey-text { color: rgba(0, 0, 0, 0.6); }
+.val-bold-black-text { color: #000000; font-weight: 700; }
+.val-accent-red-text { color: #ff3333; font-weight: 700; }
+
+.summary-section-divider-stroke-line { width: 100%; height: 1px; background-color: rgba(0, 0, 0, 0.1); margin: 4px 0; }
+
+.final-grand-total-row-specs .grand-total-label { font-size: 20px; color: #000000; font-weight: 400; }
+.final-grand-total-row-specs .grand-total-numeric-value-weight { font-size: 24px; color: #000000; font-weight: 700; }
+
+/* Promo field controls code inputs grouping layout maps styles */
+.summary-promo-code-submission-alignment-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.promo-input-field-wrapper-icon-mesh {
+  flex: 1;
+  background-color: #f0f0f0;
+  border-radius: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.promo-tag-svg-vector-icon { font-size: 16px; opacity: 0.5; }
+
+.promo-native-input-node {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 48px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.promo-apply-submit-action-trigger-btn {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 0 28px;
+  border-radius: 62px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+/* Launch pipeline proceed triggering actions components controllers styles */
+.checkout-pipeline-launch-action-button-node {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  height: 60px;
+  border-radius: 62px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform 0.1s ease;
+}
+
+.checkout-pipeline-launch-action-button-node:active,
+.promo-apply-submit-action-trigger-btn:active {
+  transform: scale(0.97) !important;
+}
+
+.empty-cart-message-alert-box-card { padding: 80px 24px; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; border: 1px dashed rgba(0,0,0,0.1); border-radius: 20px; color: rgba(0,0,0,0.5); }
+
+/* ==========================================================================
+   WIDESCREEN RESPONSIVE DESIGN BREAKPOINT - FIGMA MOBILE ALIGNMENTS MATCH
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .cart-page-split-dual-viewports-layout-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .shop-co-cart-page-framework-shell { padding: 16px 12px 60px 12px; }
+  .single-cart-item-row-card-box { grid-template-columns: 100px 1fr; gap: 12px; padding: 16px 0; }
+  .item-asset-canvas-thumbnail-frame { width: 100px; height: 100px; border-radius: 12px; }
+  .item-brand-display-name-label { font-size: 16px; }
+  .item-price-numeric-weight-label { font-size: 20px; }
+  .item-math-counter-capsule-stepper-box { width: 90px; height: 32px; padding: 0 10px; }
+  .counter-math-action-puck { font-size: 16px; }
+  
+  .cart-items-scroller-list-container-card { padding: 16px; }
+  .cart-order-summary-calculator-card-panel { padding: 16px; }
+  .summary-promo-code-submission-alignment-row { flex-direction: column; gap: 12px; }
+  .promo-apply-submit-action-trigger-btn { height: 48px; width: 100%; }
+}

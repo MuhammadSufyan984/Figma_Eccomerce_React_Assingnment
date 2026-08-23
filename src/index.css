@@ -1,0 +1,25 @@
+/* src/index.css */
+
+/* ==========================================================================
+   GLOBAL STRUCTURE FIX - REMOVES ACCIDENTAL OVERFLOWS COMPLETELY
+   ========================================================================== */
+html, 
+body, 
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important; /* Locks vertical flow only, zero screen shaking */
+  background-color: #ffffff;
+}
+
+/* 
+  Enforces padding calculation to stay strictly inside item widths,
+  preventing text elements from expanding beyond mobile screen widths
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}

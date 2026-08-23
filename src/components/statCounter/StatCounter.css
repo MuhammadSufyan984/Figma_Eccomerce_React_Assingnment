@@ -1,0 +1,46 @@
+/* Individual Stat Counter Unit */
+.stat-counter-item {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 8px 12px;
+  border-right: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Strip out final right divider border line automatically */
+.stat-counter-item:last-child {
+  border-right: none;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 4px 0;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Widescreen Laptop/Desktop Adjustments */
+@media (min-width: 992px) {
+  .stat-counter-item {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 32px;
+  }
+
+  .stat-value {
+    font-size: 40px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+}
